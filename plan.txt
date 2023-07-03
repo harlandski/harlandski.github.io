@@ -1,0 +1,7 @@
+Sat  1 Jul 06:41:28 +06 2023
+
+Create a landing page to promote me as a budding programmer, and showcase my best projects so far, and have somewhere online where I can access them.
+
+Make sure it is properly responsive (unlike the Ada Lovelace one).
+
+Include links to working projects, and to repos to download them.
