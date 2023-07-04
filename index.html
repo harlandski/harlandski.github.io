@@ -9,6 +9,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <title>James Harland</title>
   </head>
@@ -16,28 +19,31 @@
     <header>
       <nav>
         <ul class="desktop">
-          <li><a href="">About me</a></li>
-          <li><a href="">Projects</a></li>
-          <li><a href="">Skills</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="./contact.html">Contact</a></li>
         </ul>
         <ul class="mobile">
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
+          <li><a href="#about"></a></li>
+          <li><a href="#projects"></a></li>
+          <li><a href="#skills"></a></li>
+          <li><a href="./contact.html"></a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section id="james-harland">
         <h1>James Harland</h1>
-        <section id="bio">
+        <section id="about">
           <h2>About me</h2>
           <p>
             I am a budding web developer with a background in education. I have
             been working through the Full Stack Engineer career path on
-            Codecademy, ten hours a week since March 2023. A long time Linux
+            Codecademy, ten hours a week since March 2023. 
+            </p>
+            <p>
+            A long time Linux
             user, I have a decent working knowlege of Bash. While learning web
             dev, I have also begun dabbling in C, Rust and Emacs Lisp. I can use
             ed, vim, and emacs text editors, and prefer emacs with org and evil
@@ -46,10 +52,32 @@
           <p>
             My hobbies include retro computing (8080, Z80, BASIC, FOCAL),
             Arduino, tabletop roleplaying and wargames, military and religious
-            history, and learning ancient and modern languages. During COVID I
+            history, and learning ancient and modern languages. 
+            </p>
+            <p>During COVID I
             completed the first half of "From NAND to Tetris", and hope to
             complete the second half once I have learned some Java or Python.
           </p>
+        </section>
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li><i class="devicon-html5-plain"></i></li>
+            <li><i class="devicon-css3-plain"></i></li>
+            <li><i class="devicon-javascript-plain"></i></li>
+            <li><i class="devicon-bash-plain"></i></li>
+            <li><i class="devicon-c-plain"></i></li>
+            <li><i class="devicon-rust-plain"></i></li>
+            <li><i class="devicon-vim-plain"></i></li>
+            <!--li><i class="devicon-emacs-plain"></i></li-->
+            <!--li>
+              <img
+                src="./assets/images/emacs.254x256.png"
+                alt="emacs icon"
+                id="emacs"
+              />
+            </li-->
+          </ul>
         </section>
         <section id="projects">
           <h2>Projects</h2>
@@ -66,9 +94,10 @@
             <li><a href="">RPG dice roller</a></li>
             <li>
               <a href=""
-                >Pig! (Simple push-your-luck dice game, currently only for me &
-                my daughters)</a
-              >
+                >Pig!</a>
+                <br />
+                <span>Simple push-your-luck dice game, currently assumes me &
+                my daughters as players</span>
             </li>
           </ul>
           <h3>C</h3>
@@ -94,25 +123,6 @@
           <h3>Emacs lisp</h3>
           <ul>
             <li><a href="">RPG dice roller</a></li>
-          </ul>
-        </section>
-        <section id="skills">
-          <h2>Skills</h2>
-          <ul>
-            <li><i class="devicon-html5-plain"></i></li>
-            <li><i class="devicon-css3-plain"></i></li>
-            <li><i class="devicon-javascript-plain"></i></li>
-            <li><i class="devicon-bash-plain"></i></li>
-            <li><i class="devicon-c-plain"></i></li>
-            <li><i class="devicon-rust-plain"></i></li>
-            <li><i class="devicon-vim-plain"></i></li>
-            <li>
-              <img
-                src="./assets/images/emacs.254x256.png"
-                alt="emacs icon"
-                id="emacs"
-              />
-            </li>
           </ul>
         </section>
       </section>

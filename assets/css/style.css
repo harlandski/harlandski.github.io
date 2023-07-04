@@ -1,0 +1,42 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #222222;
+    color: #eeeeee;
+}
+
+main {
+    display:flex;
+    width: 100%;
+    padding-left: 100px;
+    padding-right:100px;
+}
+
+ul {
+    list-style-type: none; 
+}
+
+nav ul, #skills ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+h1, h2, h3, p, nav, ul, li {
+    margin: 10px;
+}
+
+#james-harland {
+    flex-grow: 3;
+}
+
+
+aside {
+    flex-grow: 1;
+}
+
+i {
+    font-size: 2rem;
+}
+
+.mobile {
+    display: none;
+}
