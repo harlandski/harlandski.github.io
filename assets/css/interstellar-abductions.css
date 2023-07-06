@@ -1,0 +1,164 @@
+:root {
+    --pilfering-purple:#336;
+    --purloining-pink:#f69;
+}
+
+body {
+    background-color: var(--pilfering-purple);
+}
+
+nav {
+    background-color: var(--pilfering-purple);
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    font-family: 'BioRhyme', monospace;
+    font-size: 2rem;
+    color: var(--purloining-pink);
+    transition: color 200ms linear;
+
+}
+
+nav a:hover {
+    color:white;
+}
+
+nav a:active {
+    color: var(--pilfering-purple);
+}
+
+.logo {
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display:block;
+}
+
+main {
+    position:relative;
+    top: 141.6px;
+}
+
+section {
+    background-color: var(--pilfering-purple);
+}
+
+.mission {
+    display: block;
+    max-width: 100%;
+    height: fit-content; 
+    background-image: url(assets/image/sky-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mission h1 {
+    color: white;
+    font-size: 4rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+    margin: 2rem auto;
+    width: 80%;
+
+}
+
+.services a {
+    color: var(--purloining-pink);
+    font-size: 2rem;
+    font-family: 'BioRhyme', monospace;
+    text-align: center;
+}
+
+.services a:hover {
+    color: white;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 1rem;
+    justify-content: center;
+}
+
+.service {
+    max-width: 300px;
+}
+
+figcaption {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+h2 {
+    font-family: 'Biorhyme', monospace;
+    color: var(--purloining-pink);
+    font-size: 3rem;
+    text-align: center;
+}
+
+.employee {
+    max-width: 400px;
+}
+
+footer {
+    position: relative;
+    top: 141.6px;
+    padding: 0.5rem;
+}
+
+footer p {
+    font-family: 'BioRhyme', monospace;
+    color: white;
+    font-size: 0.5rem;
+    text-align: right;
+}
+
+.mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .desktop {
+        display: none;}
+
+    .mobile {
+        display: flex;}
+   
+
+    .mission h1 {
+        font-size: 2rem;
+        margin: 0.5rem auto;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    figcaption {
+        font-size: 1rem;
+    }
+}

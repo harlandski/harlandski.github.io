@@ -1,0 +1,79 @@
+body {
+    background-color: #181818;
+    color:white;
+}
+
+h1, h2, p {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+#dicetray-div {
+    min-height: 55px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#dice {
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.die {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+}
+
+.die h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #242424;
+}
+
+#d4 {
+    background-color: yellow;
+}
+
+#d6 {
+    background-color: purple;
+}
+
+#d8 {
+    background-color: orange;
+}
+
+#d10 {
+    background-color: green;
+}
+
+#d12 {
+    background-color: blue;
+}
+
+#d20 {
+    background-color: red;
+}
+
+#dicetray {
+    font-size: 1.5rem;
+}
+
+#reset {
+    padding: 10px;
+    background-color: #242424;
+    text-align: center;
+}
