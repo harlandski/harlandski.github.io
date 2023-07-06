@@ -1,80 +1,93 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #222222;
-    color: #eeeeee;
+  font-family: "Roboto", sans-serif;
+  background-color: #222222;
+  color: #eeeeee;
 }
 
 main {
-    display:flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
-main, nav {
-    padding-left: 100px;
-    padding-right: 100px;
+main,
+nav {
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-nav ul, #skills ul{
+nav ul,
+#skills ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact ul {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
 }
 
-h1, h2, h3, p, nav, ul, li {
-    margin-top: 10px;
-    margin-bottom: 10px;
+h1,
+h2,
+h3,
+p,
+nav,
+ul,
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 p {
-    line-height: 1.25rem;
+  line-height: 1.25rem;
 }
 
-#james-harland {
-    flex-grow: 3;
+#profile,
+#contact {
+    flex-grow:1;
 }
 
 aside {
-    flex-grow: 1;
-    padding-left: 10px;
-    padding-top: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 img {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
-a:link, a:visited {
-    color:cadetblue;
-    text-decoration: none;
+a:link,
+a:visited {
+  color: cadetblue;
+  text-decoration: none;
 }
 
 a:hover {
-    color: cyan;
+  color: cyan;
 }
 
 a:active {
-    color: #eeeeee;
+  color: #eeeeee;
 }
 
-
 span {
-    display: inline-block;
-    margin-top: 5px;
-    margin-left: 10px;
-    font-style: italic;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-style: italic;
 }
 
 i {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 footer {
-    text-align: center;
-    font-style: italic;
+  text-align: center;
+  font-style: italic;
 }
 
 .mobile {
-    display: none;
+  display: none;
 }
