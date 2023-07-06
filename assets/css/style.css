@@ -7,34 +7,72 @@ body {
 main {
     display:flex;
     width: 100%;
+}
+
+main, nav {
     padding-left: 100px;
-    padding-right:100px;
+    padding-right: 100px;
 }
 
 ul {
-    list-style-type: none; 
+    list-style: none;
 }
 
 nav ul, #skills ul{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 h1, h2, h3, p, nav, ul, li {
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.25rem;
 }
 
 #james-harland {
     flex-grow: 3;
 }
 
-
 aside {
     flex-grow: 1;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+img {
+    border-radius: 10px;
+}
+
+a:link, a:visited {
+    color:cadetblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: cyan;
+}
+
+a:active {
+    color: #eeeeee;
+}
+
+
+span {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-style: italic;
 }
 
 i {
     font-size: 2rem;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
 }
 
 .mobile {
