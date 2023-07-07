@@ -9,10 +9,24 @@ main {
   width: 100%;
 }
 
+main {
+  position: relative;
+  top: 50px;
+}
+
 main,
 nav {
   padding-left: 100px;
   padding-right: 100px;
+}
+
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+  background-color: #222222;
 }
 
 ul {
@@ -93,6 +107,28 @@ footer {
   width: 100%;
   background-color: #222222;
   z-index: 1;
+}
+
+#dicetray,
+#button {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#dicetray {
+  background-color: #333333;
+  color: #eeeeee;
+}
+
+#button {
+  background-color: cadetblue;
+  color: #222222;
 }
 
 .mobile {
