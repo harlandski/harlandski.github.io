@@ -8,7 +8,7 @@ button.onclick = () => {
 }
 
 button.onmouseenter = () => {
-    button.style.backgroundColor = 'cyan';
+    button.style.backgroundColor = '#87b6b8';
 }
 
 button.onmouseleave = () => {
