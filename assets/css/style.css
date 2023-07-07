@@ -88,6 +88,11 @@ footer {
   text-align: center;
   font-style: italic;
   font-size: 0.75rem;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #222222;
+  z-index: 1;
 }
 
 .mobile {
