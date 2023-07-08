@@ -1,17 +1,21 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: #222222;
   color: #eeeeee;
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   display: flex;
   width: 100%;
-}
-
-main {
   position: relative;
-  top: 50px;
+  top: 3.125rem;
 }
 
 main,
@@ -65,9 +69,10 @@ p {
 }
 
 aside {
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 20px;
+  padding-top: 80px;
 }
+
 img {
   border-radius: 10px;
 }
@@ -102,11 +107,11 @@ footer {
   text-align: center;
   font-style: italic;
   font-size: 0.75rem;
-  position: fixed;
-  bottom: 0px;
   width: 100%;
   background-color: #222222;
-  z-index: 1;
+  margin-top: auto;
+  position: relative;
+  top: 50px;
 }
 
 #dicetray,
@@ -133,4 +138,28 @@ footer {
 
 .mobile {
   display: none;
+}
+
+@media only screen and (max-width: 700px){
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+  } 
+
+  main {
+    top: 5rem;
+  }
+
+  main,
+  nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+ 
+  footer {
+    top: 5rem;
+  }
+
 }

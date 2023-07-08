@@ -59,9 +59,17 @@ h1 {
 }
 
 #roll-button {
+    background-color: #007000;
+}
+
+#roll-button:hover {
     background-color: green;
 }
 
 #keep-button {
-    background-color: red;
+    background-color: #dd0000;
+}
+
+#keep-button:hover {
+    background-color: red; 
 }
