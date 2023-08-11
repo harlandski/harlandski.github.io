@@ -18,13 +18,13 @@ const translateCardName = async () => {
     // This console log works, showing that the function is being called
     console.log(translationQuery);
     // None of this seems to work:
-    try {await mtg.card.where({ name: translationQuery, language: 'russian' })
-        .then(results => {
-            for (card of results) {
+    try {
+        results = await mtg.card.where({ name: translationQuery, language: 'russian'});
+        for (card of results) {
                 console.log(card.name);
             }
-        })
     }
+    
     catch (error) {
         console.log(error);
     }
