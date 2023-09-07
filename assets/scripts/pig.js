@@ -99,12 +99,14 @@ rollButton.onclick = () => {
     total[player] = 0;
     advancePlayer();
     updateScoreboard();
+    alert("Big Pig!");
     
   }
   else if (rolls[0] === 6 || rolls [1] === 6) {
     score[player] = 0;
     advancePlayer();
     updateScoreboard();
+    alert("Pig!");
   }
   else {
     score[player] += rolls [0] + rolls[1];
