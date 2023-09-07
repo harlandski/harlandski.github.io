@@ -84,6 +84,10 @@ function advancePlayer () {
     }
 }
 
+function pigAlert (message, timeout) {
+  setTimeout(() => alert (message), timeout);
+}
+
 
 shuffle(players);
 colorPlayers();
@@ -99,14 +103,14 @@ rollButton.onclick = () => {
     total[player] = 0;
     advancePlayer();
     updateScoreboard();
-    setTimeout(() => {alert("Big Pig!")}, 50);
+    pigAlert("Big Pig!", 50);
     
   }
   else if (rolls[0] === 6 || rolls [1] === 6) {
     score[player] = 0;
     advancePlayer();
     updateScoreboard();
-    setTimeout(() => {alert("Pig!")}, 50);
+    pigAlert("Pig!", 50);
   }
   else {
     score[player] += rolls [0] + rolls[1];
