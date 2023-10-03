@@ -66,7 +66,7 @@ function updateScoreboard () {
   score1.innerHTML=total[0];
   score2.innerHTML=total[1];
   score3.innerHTML=total[2];
-  whoseTurn.innerHTML = "תור של " + players [player];
+  whoseTurn.innerHTML = "התור של " + players [player];
 }
 
 function roll2d6 () {
