@@ -1,7 +1,7 @@
 const adiColor = 'color: red';
 const laviColor = 'color: purple';
 const tehilaColor = 'color: blue';
-const players = ["עדי", "לביא", "תהילה"];
+const players = ["אבא", "לביא", "תהילה"];
 const name1 = document.getElementById("name1");
 const name2 = document.getElementById("name2");
 const name3 = document.getElementById("name3");
@@ -25,7 +25,7 @@ function shuffle(array) {
 
 function colorPlayers () {
   switch (players [0]) {
-    case "עדי":
+    case "אבא":
       name1.style=adiColor;
       break;
     case "לביא":
@@ -36,7 +36,7 @@ function colorPlayers () {
       break;
   }
   switch (players [1]) {
-    case "עדי":
+    case "אבא":
       name2.style=adiColor;
       break;
     case "לביא":
@@ -47,7 +47,7 @@ function colorPlayers () {
       break;
   }
   switch (players [2]) {
-    case "עדי":
+    case "אבא":
       name3.style=adiColor;
       break;
     case "לביא":
