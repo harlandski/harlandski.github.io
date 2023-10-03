@@ -22,6 +22,10 @@ h1 {
     width: 100%;
 }
 
+.name {
+    text-align: right;
+}
+
 .name, .score {
     width: 49%;
     /* Note that inline-block is needed here, as width is ignored by display: inline */
@@ -30,7 +34,7 @@ h1 {
 
 .score {
     background-color: #303030;
-    text-align: right;
+    text-align: left;
 }
 
 
@@ -39,6 +43,7 @@ h1 {
     background-color: #303030;
     padding: 2px;
     margin-top: 10px;
+    text-align:right;
 }
 
 #whose-turn {
