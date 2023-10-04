@@ -1,19 +1,22 @@
 const adiColor = 'color: red';
 const laviColor = 'color: purple';
 const tehilaColor = 'color: blue';
-const players = ["אבא", "לביא", "תהילה"];
+const mikiColor = 'color: green'
+const players = ["אבא", "לביא", "תהילה", "מיקי"];
 const name1 = document.getElementById("name1");
 const name2 = document.getElementById("name2");
 const name3 = document.getElementById("name3");
+const name4 = document.getElementById("name4");
 const score1 = document.getElementById("score1");
 const score2 = document.getElementById("score2");
 const score3 = document.getElementById("score3");
+const score4 = document.getElementById("score4")
 const whoseTurn = document.getElementById("whose-turn");
 const rollButton = document.getElementById("roll-button");
 const keepButton = document.getElementById("keep-button");
 const diceTray = document.getElementById("dice-tray");
-const total = [0,0,0];
-const score = [0,0,0];
+const total = [0,0,0,0];
+const score = [0,0,0,0];
 // Folowing taken from https://javascript.info/array-methods#shuffle-an-array
 
 function shuffle(array) {
@@ -34,6 +37,9 @@ function colorPlayers () {
     case "תהילה":
       name1.style=tehilaColor;
       break;
+    case "מיקי":
+      name1.style=mikiColor;
+      break;
   }
   switch (players [1]) {
     case "אבא":
@@ -44,6 +50,9 @@ function colorPlayers () {
       break;
     case "תהילה":
       name2.style=tehilaColor;
+      break;
+    case "מיקי":
+      name2.style=mikiColor;
       break;
   }
   switch (players [2]) {
@@ -56,6 +65,23 @@ function colorPlayers () {
     case "תהילה":
       name3.style=tehilaColor;
       break;
+    case "מיקי":
+      name3.style=mikiColor;
+      break;
+  }
+  switch (players [3]) {
+    case "אבא":
+      name4.style=adiColor;
+      break;
+    case "לביא":
+      name4.style=laviColor;
+      break;
+    case "תהילה":
+      name4.style=tehilaColor;
+      break;
+    case "מיקי":
+      name4.style=mikiColor;
+      break;
   }
 }
 
@@ -63,9 +89,11 @@ function updateScoreboard () {
   name1.innerHTML=players[0];
   name2.innerHTML=players[1];
   name3.innerHTML=players[2];
+  name4.innerHTML=players[3];
   score1.innerHTML=total[0];
   score2.innerHTML=total[1];
   score3.innerHTML=total[2];
+  score4.innerHTML=total[3];
   whoseTurn.innerHTML = "התור של " + players [player];
 }
 
@@ -79,7 +107,7 @@ function roll2d6 () {
 
 function advancePlayer () {
     player ++;
-    if (player > 2) {
+    if (player > 3) {
       player = 0;
     }
 }
