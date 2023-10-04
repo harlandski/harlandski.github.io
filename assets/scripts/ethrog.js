@@ -2,7 +2,7 @@ const adiColor = 'color: red';
 const laviColor = 'color: purple';
 const tehilaColor = 'color: blue';
 const mikiColor = 'color: green'
-const players = ["אבא", "לביא", "תהילה", "מיקי"];
+const players = ["אבא", "לביא", "תהילה", "אמא"];
 const name1 = document.getElementById("name1");
 const name2 = document.getElementById("name2");
 const name3 = document.getElementById("name3");
@@ -37,7 +37,7 @@ function colorPlayers () {
     case "תהילה":
       name1.style=tehilaColor;
       break;
-    case "מיקי":
+    case "אמא":
       name1.style=mikiColor;
       break;
   }
@@ -51,7 +51,7 @@ function colorPlayers () {
     case "תהילה":
       name2.style=tehilaColor;
       break;
-    case "מיקי":
+    case "אמא":
       name2.style=mikiColor;
       break;
   }
@@ -65,7 +65,7 @@ function colorPlayers () {
     case "תהילה":
       name3.style=tehilaColor;
       break;
-    case "מיקי":
+    case "אמא":
       name3.style=mikiColor;
       break;
   }
@@ -79,7 +79,7 @@ function colorPlayers () {
     case "תהילה":
       name4.style=tehilaColor;
       break;
-    case "מיקי":
+    case "אמא":
       name4.style=mikiColor;
       break;
   }
