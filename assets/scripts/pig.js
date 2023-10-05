@@ -34,9 +34,14 @@ function shuffle(array) {
 }
 }
 
+function colorPlayers () {
+  for (let number = 0; number < names.length; number++) {
+    names[number].style = players[number].color;
+  }
+}
+
 function updateScoreboard () { 
   for (let number = 0; number < names.length; number++) {
-    console.log(number)
     names[number].innerHTML=players[number].name
     scores[number].innerHTML=players[number].total;
   }
@@ -62,15 +67,13 @@ function pigAlert (message, timeout) {
   setTimeout(() => alert (message), timeout);
 }
 
-
 shuffle(players);
-// colorPlayers();
 let player = 0;
+colorPlayers();
 updateScoreboard ();
 
 rollButton.onclick = () => {
   rolls = roll2d6();
-  console.log(rolls);
   diceTray.innerHTML += players[player].name + "  " + rolls[0] + " " + rolls[1] + " <br>";
   if (rolls[0] === 6 && rolls [1] === 6) {
     players[player].score = 0;
