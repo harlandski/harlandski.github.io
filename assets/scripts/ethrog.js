@@ -64,7 +64,7 @@ function roll2d6() {
 
 function advancePlayer() {
   player++;
-  if (player > 2) {
+  if (player > players.length-1) {
     player = 0;
   }
 }
