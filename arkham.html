@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>&#x0420&#x043e&#x043b&#x0430&#x043d&#x0434 &#x0411&#x044d&#x043d&#x043a&#x0441</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arkham Cards</title>
+    <script src="./assets/scripts/arkham.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/arkham.css">
+  </head>
+  <body>
+    <form>
+      <label for="russian" id="russian-label"
+        >Название карты на русском:
+      </label>
+      <input type="text" name="russian" id="russian" />
+      <button id="search-button">Поиск</button>
+    </form>
+    <p>English card name: <span id="english"></span></p>
+    <img src="" alt="card-image" id="card-image" />
+  </body>
 </html>
