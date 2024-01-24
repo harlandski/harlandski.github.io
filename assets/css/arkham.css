@@ -10,7 +10,7 @@ body {
 }
 
 #app {
-  margin-top: 5px;
+  margin-top: 1rem;
   margin-left: 10px;
 }
 
@@ -19,7 +19,7 @@ form {
 }
 
 input {
-  margin-top: 5px;
+  margin-top: 1rem;
 }
 
 img {
