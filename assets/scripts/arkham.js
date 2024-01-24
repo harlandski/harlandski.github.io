@@ -24,7 +24,7 @@ function search (event) {
   console.log(searchTerm);
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   console.log(cards);
-  const foundCard = cards.find(card => card.name.includes(searchTerm));
+  const foundCard = cards.find(card => card.name.toLowerCase().includes(searchTerm.toLowerCase()));
   const name = foundCard.real_name;
   const image = "https://arkhamdb.com" + foundCard.imagesrc;
   console.log(name);
