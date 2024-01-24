@@ -21,20 +21,17 @@ function checkDatabase() {
 function search(event) {
   event.preventDefault();
   const searchTerm = document.getElementById("russian").value;
-  console.log(searchTerm);
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
-  console.log(cards);
   const foundCard = cards.find((card) =>
     card.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
   const found = foundCard.name;
   const name = foundCard.real_name;
   const image = "https://arkhamdb.com" + foundCard.imagesrc;
-  console.log(name);
-  console.log(image);
   document.getElementById("found").innerHTML = found;
   document.getElementById("english").innerHTML = name;
-  document.getElementById("card-image").src = image;
+  const cardImage = document.getElementById("card-image")
+  cardImage.src = image;
 }
 
 function monitorInput() {
@@ -43,8 +40,15 @@ function monitorInput() {
   });
 }
 
+function setUpImageErrorHandling(){
+  const cardImage = document.getElementById("card-image")
+  cardImage.addEventListener("error", (event) => {event.target.src = "./assets/images/arkham-horror-card-back.png"
+  event.onerror = null})
+}
+
 function main() {
   checkDatabase();
+  setUpImageErrorHandling();
   monitorInput();
 }
 
