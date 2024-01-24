@@ -23,7 +23,7 @@ function search(event) {
   const searchTerm = document.getElementById("russian").value;
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   const foundCard = cards.find((card) =>
-    card.name.toLowerCase().includes(searchTerm.toLowerCase())
+    card.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
   const found = foundCard.name;
   const name = foundCard.real_name;
