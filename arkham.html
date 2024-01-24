@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div id="app">
     <form>
       <label for="russian" id="russian-label"
         >Название карты на русском:
@@ -18,8 +19,9 @@
       <input type="text" name="russian" id="russian" />
       <button id="search-button">Поиск</button>
     </form>
-    <p>Найденная карта: <span id="found"></span></p>
-    <p>English card name: <span id="english"></span></p>
+    <p><span id="found"></span></p>
+    <p><span id="english"></span></p>
     <img src="./assets/images/arkham-horror-card-back.png" alt="card-image" id="card-image" />
+    </div>
   </body>
 </html>

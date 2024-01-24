@@ -1,13 +1,32 @@
 * {
-    background-color: #222222;
-    color: #CCCCCC;
-    font-family: "Comfortaa", sans-serif;
+  background-color: #222222;
+  color: #cccccc;
+  font-family: "Comfortaa", sans-serif;
+}
+
+body {
+  max-width: 320px;
+  margin: auto;
+}
+
+#app {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  margin-top: 5px;
 }
 
 img {
-    max-width: 300px;
+  max-width: 300px;
 }
 
-input, button {
-    border: solid 1px #CCCCCC;
+input,
+button {
+  border: solid 1px #cccccc;
 }
