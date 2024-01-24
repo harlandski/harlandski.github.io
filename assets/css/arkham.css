@@ -6,3 +6,7 @@
 img {
     max-width: 418px;
 }
+
+input, button {
+    border: solid 1px #CCCCCC;
+}
