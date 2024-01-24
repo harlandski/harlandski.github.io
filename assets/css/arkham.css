@@ -1,10 +1,11 @@
 * {
     background-color: #222222;
-    color: #CCCCCC
+    color: #CCCCCC;
+    font-family: "Comfortaa", sans-serif;
 }
 
 img {
-    max-width: 418px;
+    max-width: 300px;
 }
 
 input, button {
