@@ -9,41 +9,43 @@ async function setCards() {
   localStorage.setItem("ArkhamCards", JSON.stringify(cards));
 }
 
-function checkDatabase () {
+function checkDatabase() {
   if (!localStorage.getItem("ArkhamCards")) {
-    const russianLabel = document.getElementById("russian-label")
-    russianLabel.innerHTML = "Скачаются карты..."
+    const russianLabel = document.getElementById("russian-label");
+    russianLabel.innerHTML = "Скачаются карты...";
     setCards();
-    russianLabel.innerHTML = "Название карты на русском: "
+    russianLabel.innerHTML = "Название карты на русском: ";
   }
 }
 
-function search (event) {
+function search(event) {
   event.preventDefault();
   const searchTerm = document.getElementById("russian").value;
   console.log(searchTerm);
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   console.log(cards);
-  const foundCard = cards.find(card => card.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  const foundCard = cards.find((card) =>
+    card.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const found = foundCard.name;
   const name = foundCard.real_name;
   const image = "https://arkhamdb.com" + foundCard.imagesrc;
   console.log(name);
   console.log(image);
+  document.getElementById("found").innerHTML = found;
   document.getElementById("english").innerHTML = name;
   document.getElementById("card-image").src = image;
-  
 }
 
-function monitorInput () {
+function monitorInput() {
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("search-button").addEventListener("click", search);
-  })
+  });
 }
 
-function main () {
+function main() {
   checkDatabase();
   monitorInput();
-  
 }
 
 main();
