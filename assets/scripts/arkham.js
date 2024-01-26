@@ -20,7 +20,7 @@ function checkDatabase() {
 
 function search(event) {
   event.preventDefault();
-  if (event.value !="") {
+  if (event.target.value !="") {
   const searchTerm = document.getElementById("russian").value;
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
