@@ -20,6 +20,7 @@ function checkDatabase() {
 
 function search(event) {
   event.preventDefault();
+  if (event.value !="") {
   const searchTerm = document.getElementById("russian").value;
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
@@ -31,25 +32,46 @@ function search(event) {
   const image = "https://arkhamdb.com" + foundCard.imagesrc;
   document.getElementById("found").innerHTML = found;
   document.getElementById("english").innerHTML = name;
-  const cardImage = document.getElementById("card-image")
+  const cardImage = document.getElementById("card-image");
   cardImage.src = image;
+  document.getElementById("russian").value=""; }
 }
 
 function monitorInput() {
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("search-button").addEventListener("click", search);
   });
+  document.getElementById("russian").addEventListener("change", search);
 }
 
-function setUpImageErrorHandling(){
-  const cardImage = document.getElementById("card-image")
-  cardImage.addEventListener("error", (event) => {event.target.src = "./assets/images/arkham-horror-card-back.png"
-  event.onerror = null})
+function setUpImageErrorHandling() {
+  const cardImage = document.getElementById("card-image");
+  cardImage.addEventListener("error", (event) => {
+    event.target.src = "./assets/images/arkham-horror-card-back.png";
+    event.onerror = null;
+  });
+}
+function dataList() {
+  const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
+  const allNames = [];
+  for (card of cards) {
+    allNames.push(card.name);
+  }
+  const sortedOnlyCyrillicNames = allNames
+    .sort()
+    .filter((item) => /[а-яА-Я]/.test(item));
+  const sortedOnlyCyrillicNamesNoDupes = sortedOnlyCyrillicNames.filter((value,index) => sortedOnlyCyrillicNames.indexOf(value) === index);
+  for (item of sortedOnlyCyrillicNamesNoDupes) {
+    const option = document.createElement("option");
+    option.innerHTML = item;
+    document.getElementById("card-name").appendChild(option);
+  }
 }
 
 function main() {
   checkDatabase();
   setUpImageErrorHandling();
+  dataList();
   monitorInput();
 }
 
