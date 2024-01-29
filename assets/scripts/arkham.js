@@ -9,11 +9,11 @@ async function setCards() {
   localStorage.setItem("ArkhamCards", JSON.stringify(cards));
 }
 
-function checkDatabase() {
+async function checkDatabase() {
   if (!localStorage.getItem("ArkhamCards")) {
     const russianLabel = document.getElementById("russian-label");
     russianLabel.innerHTML = "Скачаются карты...";
-    setCards();
+    await setCards();
     russianLabel.innerHTML = "Название карты на русском: ";
   }
 }
@@ -68,8 +68,10 @@ function dataList() {
   }
 }
 
-function main() {
-  checkDatabase();
+// This function has to be async, and checkDatabase() called with await, so that the dataList will only 
+// be set up once the database is loaded the first time
+async function main() {
+  await checkDatabase();
   setUpImageErrorHandling();
   dataList();
   monitorInput();
