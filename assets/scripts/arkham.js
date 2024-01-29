@@ -12,16 +12,22 @@ async function setCards() {
 async function checkDatabase() {
   if (!localStorage.getItem("ArkhamCards")) {
     const russianLabel = document.getElementById("russian-label");
-    russianLabel.innerHTML = "Скачаются карты...";
+    const input = document.getElementById("input");
+    const searchButton = document.getElementById("search-button");
+    input.style.display = "none";
+    searchButton.style.display = "none";
+    russianLabel.innerHTML = "Скачается база данных";
     await setCards();
     russianLabel.innerHTML = "Название карты на русском: ";
+    input.style.display = "inline-block";
+    searchButton.style.display = "inline-block"
   }
 }
 
 function search(event) {
   event.preventDefault();
   if (event.target.value !="") {
-  const searchTerm = document.getElementById("russian").value;
+  const searchTerm = document.getElementById("input").value;
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
   const foundCard = cards.find((card) =>
@@ -34,14 +40,14 @@ function search(event) {
   document.getElementById("english").innerHTML = name;
   const cardImage = document.getElementById("card-image");
   cardImage.src = image;
-  document.getElementById("russian").value=""; }
+  document.getElementById("input").value=""; }
 }
 
 function monitorInput() {
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("search-button").addEventListener("click", search);
   });
-  document.getElementById("russian").addEventListener("change", search);
+  document.getElementById("input").addEventListener("change", search);
 }
 
 function setUpImageErrorHandling() {
