@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abductions & Aliens Random Characters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;500&family=Special+Elite&display=swap"
+        rel="stylesheet">
+    <!--link rel="stylesheet" href="./assets/css/reset.css"-->
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+    </style>
+    <!--link rel="stylesheet" href="./assets/css/style.css"-->
+    <style>
+* {
+  font-family: "Special Elite", cursive;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-weight: normal;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.character {
+  border: 1px solid black;
+  padding: 5px;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 0.75fr 0.25fr 0.75fr 1fr 1fr 1fr;
+  grid-template-rows: repeat (2, 1fr) 2fr repeat (9, 1fr);
+  grid-template-areas:
+    "civilian-character       civilian-character  civilian-character      civilian-character    civilian-character civilian-character"
+    "name-label               name                name                    name                  name               name"
+    "profession-label         profession          profession              profession            profession         profession"
+    "abilities-label          abilities-label     weapon-label            weapon1               weapon2            items-label"
+    "face-off-label           face-off            type-label              type1                 type2              items"
+    "low-key-label            low-key             ammo-label              ammo1                 ammo2              items"
+    "brainpower-label         brainpower          damage-label            damage1               damage2            items"
+    "musclebound-label        musclebound         quality-label           quality1              quality2           items"
+    "hit-points-label         hit-points-label    armor-label             armor1                armor2             training-label"
+    "total-hp-label           hp                  rating-label            rating1               rating2            training"
+    "current-hp-label         .                   armor-training-label    armor-training1       armor-training2    training"
+    ".                        .                   integrity-label         integrity1            integrity2         training";
+}
+
+
+.civilian-character-label {
+  grid-area: civilian-character;
+  text-align: center;
+}
+
+.name-label {
+  grid-area: name-label;
+}
+
+.name {
+  grid-area: name;
+}
+
+.profession-label {
+  grid-area: profession-label;
+}
+
+.profession {
+  grid-area: profession;
+}
+
+.abilities-label {
+  grid-area: abilities-label;
+}
+
+.face-off-label {
+  grid-area: face-off-label;
+}
+
+.low-key-label {
+  grid-area: low-key-label;
+}
+
+.brainpower-label {
+  grid-area: brainpower-label;
+}
+
+.musclebound-label {
+  grid-area: musclebound-label;
+}
+
+.face-off {
+  grid-area: face-off;
+}
+
+.low-key {
+  grid-area: low-key;
+}
+
+.brainpower {
+  grid-area: brainpower;
+}
+
+.musclebound {
+  grid-area: musclebound;
+}
+
+.face-off,
+.low-key,
+.brainpower,
+.musclebound {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.hit-points-label {
+  grid-area: hit-points-label;
+}
+
+.total-hp-label {
+  grid-area: total-hp-label;
+}
+
+.current-hp-label {
+  grid-area: current-hp-label;
+}
+
+.hp {
+  grid-area: hp;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.weapon-label {
+  grid-area: weapon-label;
+}
+
+.type-label {
+  grid-area: type-label;
+}
+
+.ammo-label {
+  grid-area: ammo-label;
+}
+
+.damage-label {
+  grid-area: damage-label;
+}
+
+.quality-label {
+  grid-area: quality-label;
+}
+
+.weapon-1 {
+  grid-area: weapon1;
+}
+
+.weapon2 {
+  grid-area: weapon2;
+}
+
+.type1 {
+  grid-area: type1;
+}
+
+.type2 {
+  grid-area: type2;
+}
+
+.ammo1 {
+  grid-area: ammo1;
+}
+
+.ammo2 {
+  grid-area: ammo2;
+}
+
+.damage1 {
+  grid-area: damage1;
+}
+
+.damage2 {
+  grid-area: damage2;
+}
+
+.quality1 {
+  grid-area: quality1;
+}
+
+.quality2 {
+  grid-area: quality2;
+}
+
+.armor-label {
+  grid-area: armor-label;
+}
+
+.rating-label {
+  grid-area: rating-label;
+}
+
+.armor-training-label {
+  grid-area: armor-training-label;
+}
+
+.integrity-label {
+  grid-area: integrity-label;
+}
+
+.armor1 {
+  grid-area: armor1;
+}
+
+.armor2 {
+  grid-area: armor2;
+}
+
+.rating1 {
+  grid-area: rating1;
+}
+
+.rating2 {
+  grid-area: rating2;
+}
+
+.armor-training1 {
+  grid-area: armor-training1;
+}
+
+.armor-training2 {
+  grid-area: armor-training2;
+}
+
+.integrity1 {
+  grid-area: integrity1;
+}
+
+.integrity2 {
+  grid-area: integrity2;
+}
+
+.items-label {
+  grid-area: items-label;
+}
+
+.items-list {
+  grid-area: items;
+}
+
+.training-label {
+  grid-area: training-label;
+}
+
+.training-list {
+  grid-area: training;
+}
+
+footer p {
+  text-align: center;
+  margin: 1rem;
+}
+
+@media print {
+  main {
+    margin: 0.5in;
+  }
+  footer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .character {
+    gap: 0.25rem;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1, h2, h3, p, li{
+    font-size: 0.85rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    margin: 0;
+    border: none;
+  }
+
+  .character {
+    grid-template-columns: 0.75fr 0.25fr 0.75fr 1fr 1fr;
+    grid-template-rows: repeat (2, 1fr) 2fr repeat (18, 1fr);
+    grid-template-areas:
+      "civilian-character       civilian-character  civilian-character      civilian-character    civilian-character"
+      "name-label               name                name                    name                  name"
+      "profession-label         profession          profession              profession            profession"
+      "abilities-label          abilities-label     weapon-label            weapon1               weapon2"
+      "face-off-label           face-off            type-label              type1                 type2"
+      "low-key-label            low-key             ammo-label              ammo1                 ammo2"
+      "brainpower-label         brainpower          damage-label            damage1               damage2"
+      "musclebound-label        musclebound         quality-label           quality1              quality2"
+      "hit-points-label         hit-points-label    armor-label             armor1                armor2"
+      "total-hp-label           hp                  rating-label            rating1               rating2"
+      "current-hp-label         .                   armor-training-label    armor-training1       armor-training2"
+      ".                        .                   integrity-label         integrity1            integrity2"
+      "items-label              items-label         items-label             items-label           items-label"
+      "items                    items               items                   items                 items"
+      "items                    items               items                   items                 items"
+      "items                    items               items                   items                 items"
+      "items                    items               items                   items                 items"
+      "training-label           training-label      training-label          training-label        training-label"
+      "training                 training            training                training              training"
+      "training                 training            training                training              training"
+      "training                 training            training                training              training"
+  }
+}
+    </style>
+    <!--script src="./assets/js/main.js" defer></script-->
+    <script defer>
+
+const randomNameUrl = "https://randomuser.me/api/?nat=us";
+
+const modifiers = [
+  [1, 2, -3],
+  [3, 3, -2],
+  [4, 5, -1],
+  [6, 8, 0],
+  [9, 10, 1],
+  [11, 11, 2],
+  [12, 12, 3],
+];
+
+const professions = [
+  [11, "Scientist", 1, "Notepad", "Science"],
+  [12, "Pharmacist", 1, "Pills", "Pharmacology/Toxicology"],
+  [13, "Doctor", 2, "Medkit", "Medicine"],
+  [14, "Nurse", 1, "Medkit", "Medicine"],
+  [15, "Programmer", 1, "Tablet", "Programming"],
+  [16, "Analyst", 1, "Tablet", "Surveillance and Security"],
+  [21, "Technician", 1, "Electrical Tools", "Computer Engineering"],
+  [22, "Mechanic", 2, "Tool kit", "Automotives"],
+  [23, "Truck Driver", 2, "Porn Mag", "Driving"],
+  [24, "Photographer", 1, "Camera", "Photography"],
+  [25, "Driver", 1, "Leather Coat", "Driving"],
+  [26, "Pilot", 2, "Luggage", "Aviation"],
+  [31, "EMT", 2, "Medkit", "First Aid"],
+  [32, "Police Officer", 2, "Armor Vest", "Pistols"],
+  [33, "Fire Fighter", 2, "Heavy Coat", "Musclebound +1"],
+  [34, "Soldier", 2, "Camo", "Weapons"],
+  [35, "Homemaker", 1, "Snacks", "Culinary Knowledge"],
+  [36, "Nanny", 1, "Snacks", "N/A"],
+  [41, "Teacher", 1, "Notepad", "Science or Academics"],
+  [42, "Coach", 1, "Whistle", "Sports"],
+  [43, "Athlete", 2, "Nothing", "Sports"],
+  [44, "Librarian", 1, "Big book", "Foreign Culture and Language"],
+  [45, "Butcher", 2, "Knife", "Melee"],
+  [46, "Tailor", 1, "Measuring Tape", "Fashion"],
+  [51, "Salesperson", 1, "Notepad", "Culture"],
+  [52, "Grocer", 1, "Snacks", "N/A"],
+  [53, "Carpenter", 2, "Hammer", "Architecture and Construction"],
+  [54, "Engineer", 2, "Calculator", "Mechanical Engineering"],
+  [55, "Fortune Teller", 1, "Charm", "Low-Key +1"],
+  [56, "Homeless Person", 2, "Nothing", "Any"],
+  [61, "Hunter", 2, "Camo", "Sporting Weapons"],
+  [62, "Lawyer", 1, "Notepad", "Law"],
+  [63, "Housekeeper", 1, "Smartphone", "N/A"],
+  [64, "Security Guard", 2, "Windbreaker", "Pistols"],
+  [65, "Dog Trainer", 2, "Leash", "N/A"],
+  [66, "Business Person", 1, "Smartphone", "Business"],
+];
+
+const randomItems = [
+  [11, 12, "Backpack"],
+  [13, 14, "Water Bottle"],
+  [15, 16, "Flashlight"],
+  [21, 22, "Mirror"],
+  [23, 24, "Whistle"],
+  [25, 26, "Small Sack"],
+  [31, 32, "Large Sack"],
+  [33, 34, "Snacks, small bag"],
+  [35, 36, "Snacks, large bag"],
+  [41, 42, "50' Rope"],
+  [43, 44, "Tire Iron"],
+  [45, 46, "Six-pack"],
+  [51, 52, "Smartphone"],
+  [53, 54, "Lighter"],
+  [55, 56, "Gas can"],
+  [61, 62, "Whiskey Bottle"],
+  [63, 64, "Toys"],
+  [65, 66, "Pet"],
+];
+
+const randomWeapons = [
+  [11, 13, "Fists"],
+  [14, 23, "Club"],
+  [24, 33, "Knife"],
+  [34, 43, "Cord"],
+  [44, 53, "Pistol"],
+  [54, 63, "Shotgun"],
+  [64, 66, "Rifle"],
+];
+
+const weaponsList = [
+  {
+    name: "Fists",
+    type: "Hand-to-hand",
+    damage: "1",
+    ammo: "-",
+    quality: "-",
+  },
+  {
+    name: "Club",
+    type: "Melee",
+    damage: "1d2",
+    ammo: "-",
+    quality: "Blunt",
+  },
+  {
+    name: "Tire Iron",
+    type: "Melee",
+    damage: "1d2",
+    ammo: "-",
+    quality: "Blunt",
+  },
+  {
+    name: "Hammer",
+    type: "Melee",
+    damage: "1d2",
+    ammo: "-",
+    quality: "Blunt",
+  },
+  {
+    name: "Knife",
+    type: "Melee",
+    damage: "1d2",
+    ammo: "-",
+    quality: "-",
+  },
+  {
+    name: "Cord",
+    type: "Flail",
+    damage: "1d2",
+    ammo: "-",
+    quality: "Hold",
+  },
+  {
+    name: "Leash",
+    type: "Flail",
+    damage: "1d2",
+    ammo: "-",
+    quality: "Hold",
+  },
+  {
+    name: "Pistol",
+    type: "Pistol",
+    damage: "1d3",
+    ammo: "4",
+    quality: "-",
+  },
+  {
+    name: "Shotgun",
+    type: "Sporting",
+    damage: "1d3",
+    ammo: "2",
+    quality: "Spread",
+  },
+  {
+    name: "Rifle",
+    type: "Sporting",
+    damage: "1d6",
+    ammo: "1",
+    quality: "Long",
+  },
+];
+
+const randomArmor = [
+  [2, 4, "None"],
+  [5, 7, "Leather Jacket"],
+  [8, 9, "Long Coat"],
+  [10, 12, "Bulletproof Vest"],
+];
+
+const armorList = [
+  {
+    name: "None",
+    rating: "N/A",
+    integrity: "N/A",
+    training: "no",
+  },
+  {
+    name: "Leather Jacket",
+    rating: 1,
+    integrity: 1,
+    training: "no",
+  },
+  {
+    name: "Long Coat",
+    rating: 1,
+    integrity: 1,
+    training: "no",
+  },
+  {
+    name: "Leather Coat",
+    rating: 1,
+    integrity: 1,
+    training: "no",
+  },
+  {
+    name: "Heavy Coat",
+    rating: 1,
+    integrity: 1,
+    training: "no",
+  },
+  {
+    name: "Bulletproof Vest",
+    rating: "1d2",
+    integrity: 2,
+    training: "no",
+  },
+  {
+    name: "Armor Vest",
+    rating: "1d2",
+    integrity: 2,
+    training: "no",
+  },
+];
+
+const incongruousArmor = [
+  ["Leather Coat", "Leather Jacket"],
+  ["Leather Coat", "Long Coat"],
+  ["Heavy Coat", "Leather Jacket"],
+  ["Heavy Coat", "Long Coat"],
+  ["Armor Vest", "Bulletproof Vest"],
+];
+
+const randomTraining = [
+  "Science",
+  "Pharmacology / Toxicology",
+  "Medicine",
+  "Programming",
+  "Surveillance and Security",
+  "Computer Engineering",
+  "Automotives",
+  "Driving",
+  "Photography",
+  "Aviation",
+  "First Aid",
+  "Pistols",
+  "Weapons",
+  "Culinary Knowledge",
+  "Science or Academics",
+  "Sports",
+  "Foreign Culture and Language",
+  "Melee",
+  "Fashion",
+  "Culture",
+  "Architecture and Construction",
+  "Mechanical Engineering",
+  "Sporting Weapons",
+  "Law",
+  "Business",
+];
+
+async function getRandomName() {
+  try {
+    const response = await fetch(randomNameUrl);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      const firstName = jsonResponse.results[0].name.first;
+      const lastName = jsonResponse.results[0].name.last;
+      const fullName = `${firstName} ${lastName}`;
+      return fullName;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function dice(number, sides) {
+  let total = 0;
+  for (i = 0; i < number; i++) {
+    let roll = Math.floor(Math.random() * sides) + 1;
+    total += roll;
+  }
+  return total;
+}
+
+function d66() {
+  let roll1 = dice(1, 6);
+  let roll2 = dice(1, 6);
+  return roll1 * 10 + roll2;
+}
+
+function lookUpRange(roll, nestedArray) {
+  /* Assumes an nested array of format [[x,y,z],[x,y,z]...]
+  x = lower bounds
+  y = upper bounds
+  z = target data */
+  let lower = 0;
+  let upper = 1;
+  let target = 2;
+  // console.log(roll, nestedArray);
+  for (item in nestedArray) {
+    if (roll >= nestedArray[item][lower] && roll <= nestedArray[item][upper]) {
+      return nestedArray[item][target];
+    }
+  }
+}
+
+function lookUpProfession(d66) {
+  /* Assumes an nested array, where the first items in each
+  set is an index, and the whole array is returned */
+  let index = 0;
+  for (item in professions) {
+    if (d66 === professions[item][index]) {
+      return professions[item];
+    }
+  }
+}
+
+function addNewUniqueItem(destination, source) {
+  let item = lookUpRange(d66(), source);
+  // If the item already exists, repeat the lookup
+  while (destination.includes(item)) {
+    item = lookUpRange(d66(), source);
+  }
+  destination.push(item);
+}
+
+function lookUpTraining() {
+  die = randomTraining.length;
+  return randomTraining[dice(1, die) - 1];
+}
+
+function addListItem(content, className, unorderedList) {
+  let li = document.createElement("li");
+  li.innerHTML = content;
+  li.classList.add(className);
+  unorderedList.appendChild(li);
+}
+
+function  determineWeaponTraining(training, weapon) {
+    if (dice(1, 2) === 2) {
+    training.push(weapon);
+    }
+  }
+  
+  function populate(destination, source, items) {
+  // Push object into array and remove its counterpart from the original array
+    for (item of source) {
+      if (items.includes(item.name)) {
+        destination.push(item);
+        // Remove item from original array
+        const index = items.indexOf(item.name);
+        items.splice(index, 1);
+      }
+    }
+  }
+
+  function determineAdditionalTraining(brainpower) {
+    if (brainpower > 0) {
+      return brainpower;
+    } else {
+      return 0;
+    }
+  }
+
+function rollCoreAbility () {
+  return lookUpRange(dice(2,6),modifiers);
+}
+
+class ZeroLevelHero {
+  constructor(name, faceOff, lowKey, brainpower, musclebound, profession, hpMod, items, training, weapons, armor, hp) {
+    this.name = name;
+    this.faceOff = faceOff;
+    this.lowKey = lowKey;
+    this.brainpower = brainpower;
+    this.musclebound = musclebound;
+    this.profession = profession;
+    this.hpMod = hpMod;
+    this.items = items;
+    this.training = training;
+    this.weapons = weapons;
+    this.armor = armor;
+    this.hp = hp;
+  }
+
+}
+
+
+async function createZeroLevelHero() {
+  // Get random name - note that await is needed here, and async above
+  const name = await getRandomName();
+  // Roll core abilities
+  let faceOff = rollCoreAbility();
+  let lowKey = rollCoreAbility();
+  let brainpower = rollCoreAbility();
+  let musclebound = rollCoreAbility();
+  // Roll profession once, and then use it for various lookups
+  const professionRoll = d66();
+  const profession = lookUpProfession(professionRoll)[1];
+  if (profession === "Firefighter") {
+      musclebound++;
+    } else if (profession === "Fortune Teller") {
+      lowKey++;
+    }
+  const hpMod = lookUpProfession(professionRoll)[2];
+  const items = [lookUpProfession(professionRoll)[3]];
+  if (items[0] === "Nothing") {
+      items.pop();
+    }
+  const training = [lookUpProfession(professionRoll)[4]];
+  // Randomly determine value of "Any"
+  if (training.includes("Any")) {
+    //First remove Any
+    const index = training.indexOf("Any");
+    training.splice(index, 1);
+    //Then add a random training
+    training.push(lookUpTraining());
+    }
+    //Remove non-training items from training array
+  const nonTrainingItems = ["Musclebound +1", "Low-Key +1", "N/A"];
+  for (item of nonTrainingItems) {
+    if (training.includes(item)) {
+      //remove non-training item from array;
+      const index = training.indexOf(item);
+      training.splice(index, 1);
+  
+    }
+  }
+
+  // Two random unique items and one random unique weapon
+  addNewUniqueItem(items, randomItems);
+  addNewUniqueItem(items, randomItems);
+  addNewUniqueItem(items, randomWeapons);
+  const justAddedWeapon = items.slice(-1);
+  determineWeaponTraining(training, justAddedWeapon);
+  // Weapons
+  const weapons = [];
+  populate(weapons, weaponsList, items);
+  // Random armor
+  items.push(lookUpRange(dice(2, 6), randomArmor));
+  const armor = [];
+  populate(armor, armorList, items);
+  // Remove "None" if there is more than one armor
+  if (armor.length > 1) {
+    for (let index in armor) {
+      if (armor[index].name === "None") {
+        armor.splice(index, 1);
+      }
+    }
+  }
+  // If incongrous armor exists, prioritize the one from the profession
+  let splice = false;
+    if (armor.length > 1) {
+      for (item in armor) {
+        for (let incongruous in incongruousArmor) {
+          if (
+            armor[1].name === incongruousArmor[incongruous][0] &&
+            armor[0].name === incongruousArmor[incongruous][1]
+          ) {
+            splice = true;
+          }
+        }
+      }
+      if (splice === true) {
+        armor.splice(0, 1);
+      }
+    }
+  const hp = 3 + musclebound + hpMod;
+  // Determine number of additional training slots
+  const additionalTraining = determineAdditionalTraining(brainpower);
+    // Fill these slots randomly, avoiding duplicates
+    for (let i = 0; i < additionalTraining; i++) {
+      let newTraining = lookUpTraining();
+      while (training.includes(newTraining)) {
+        newTraining = lookUpTraining();
+      }
+      training.push(newTraining);
+    }
+  return new ZeroLevelHero(name, faceOff, lowKey, brainpower, musclebound, profession, hpMod, items, training, weapons, armor, hp);
+}
+
+const heroes = [];
+
+async function main() {
+
+  for (let i = 0; i < 4; i++) {
+    // Note the await here is vital, without it the characters are not ready
+    heroes.push(await createZeroLevelHero());
+  }
+
+// Determine hmtl fields
+
+const nameFields = document.getElementsByClassName("name");
+const professionFields = document.getElementsByClassName("profession");
+const faceOffFields = document.getElementsByClassName("face-off");
+const lowKeyFields = document.getElementsByClassName("low-key");
+const brainpowerFields = document.getElementsByClassName("brainpower");
+const muscleboundFields = document.getElementsByClassName("musclebound");
+const hitPointFields = document.getElementsByClassName("hp");
+const weapon1Fields = document.getElementsByClassName("weapon1");
+const weapon2Fields = document.getElementsByClassName("weapon2");
+const type1Fields = document.getElementsByClassName("type1");
+const type2Fields = document.getElementsByClassName("type2");
+const ammo1Fields = document.getElementsByClassName("ammo1");
+const ammo2Fields = document.getElementsByClassName("ammo2");
+const damage1Fields = document.getElementsByClassName("damage1");
+const damage2Fields = document.getElementsByClassName("damage2");
+const quality1Fields = document.getElementsByClassName("quality1");
+const quality2Fields = document.getElementsByClassName("quality2");
+const armor1Fields = document.getElementsByClassName("armor1");
+const armor2Fields = document.getElementsByClassName("armor2");
+const rating1Fields = document.getElementsByClassName("rating1");
+const rating2Fields = document.getElementsByClassName("rating2");
+const training1Fields = document.getElementsByClassName("armor-training1");
+const training2Fields = document.getElementsByClassName("armor-training2");
+const integrity1Fields = document.getElementsByClassName("integrity1");
+const integrity2Fields = document.getElementsByClassName("integrity2");
+const itemsTables = document.getElementsByClassName("items-list");
+const trainingTables = document.getElementsByClassName("training-list");
+
+// Populate fields
+
+for (let i = 0; i < 4; i++) {
+  nameFields[i].innerHTML = heroes[i].name;
+  professionFields[i].innerHTML = heroes[i].profession;
+  faceOffFields[i].innerHTML = heroes[i].faceOff;
+  lowKeyFields[i].innerHTML = heroes[i].lowKey;
+  brainpowerFields[i].innerHTML = heroes[i].brainpower;
+  muscleboundFields[i].innerHTML = heroes[i].musclebound;
+  hitPointFields[i].innerHTML = heroes[i].hp;
+  weapon1Fields[i].innerHTML = heroes[i].weapons[0].name;
+  type1Fields[i].innerHTML = heroes[i].weapons[0].type;
+  ammo1Fields[i].innerHTML = heroes[i].weapons[0].ammo;
+  damage1Fields[i].innerHTML = heroes[i].weapons[0].damage;
+  quality1Fields[i].innerHTML = heroes[i].weapons[0].quality;
+  if (heroes[i].weapons[1]) {
+    weapon2Fields[i].innerHTML = heroes[i].weapons[1].name;
+    type2Fields[i].innerHTML = heroes[i].weapons[1].type;
+    ammo2Fields[i].innerHTML = heroes[i].weapons[1].ammo;
+    damage2Fields[i].innerHTML = heroes[i].weapons[1].damage;
+    quality2Fields[i].innerHTML = heroes[i].weapons[1].quality;
+  }
+  armor1Fields[i].innerHTML = heroes[i].armor[0].name;
+  rating1Fields[i].innerHTML = heroes[i].armor[0].rating;
+  training1Fields[i].innerHTML = heroes[i].armor[0].training;
+  integrity1Fields[i].innerHTML = heroes[i].armor[0].integrity;
+
+  if (heroes[i].armor[1]) {
+    armor2Fields[i].innerHTML = heroes[i].armor[1].name;
+    rating2Fields[i].innerHTML = heroes[i].armor[1].rating;
+    training2Fields[i].innerHTML = heroes[i].armor[1].training;
+    integrity2Fields[i].innerHTML = heroes[i].armor[1].integrity;
+  }
+
+  for (item of heroes[i].items) {
+    addListItem(item, "equipment-item", itemsTables[i]);
+  }
+
+  // Add blank row(s) if less than 3 items
+
+  for (extra = 3 - heroes[i].items.length; extra > 0; extra--) {
+    addListItem(" ", "blank-item", itemsTables[i]);
+  }
+
+  for (training of heroes[i].training) {
+    addListItem(training, "training-item", trainingTables[i]);
+  }
+
+  for (extra = 3 - heroes[i].training.length; extra > 0; extra--) {
+    addListItem(" ", "blank-item", trainingTables[i]);
+  }
+}
+}
+
+main();
+
+    </script>
+    
+</head>
+
+<body>
+    <main>
+    <div class="character" id="character1">
+            <h1 class = "civilian-character-label">Civilian Character</h1>
+            <h2 class = "name-label">Name:</h2>
+            <p class = "name">Loading...</p>
+            <h2 class = "profession-label">Profession:</h2>
+            <p class = "profession"></p>
+            <h2 class = "abilities-label">Abilities</h2>
+            <h3 class = "face-off-label">Face-Off:</h3>
+            <p class = "face-off"></p>
+            <h3 class = "low-key-label">Low-Key:</h3>
+            <p class = "low-key"></p>
+            <h3 class = brainpower-label>Brainpower:</h3> 
+            <p class = "brainpower"></p>
+            <h3 class = "musclebound-label">Musclebound:</h3>
+            <p class = "musclebound"></p>
+            <h2 class = "hit-points-label">Hit Points</h2>
+            <h3 class = "total-hp-label">Total:</h3>
+            <p class = "hp"></p>
+            <h3 class = "current-hp-label">Current:</h3>
+            <h2 class = "weapon-label">Weapon:</h2>
+            <p class = "weapon1"></p>
+            <p class = "weapon2"></p>
+            <h3 class = "type-label">Type:</h3>
+            <p class = "type1"></p>
+            <p class = "type2"></p>
+            <h3 class = "ammo-label">Ammo:</h3>
+            <p class = "ammo1"></p>
+            <p class = "ammo2"></p>
+            <h3 class = "damage-label">Damage:</h3>
+            <p class = "damage1"></p> 
+            <p class = "damage2"></p>
+            <h3 class = "quality-label">Quality:</h3>
+            <p class = "quality1"></p>
+            <p class = "quality2"></p>
+            <h2 class = "armor-label">Armor:</h2>
+            <p class = "armor1"></p>
+            <p class = "armor2"></p>
+            <h3 class = "rating-label">Rating:</h3>
+            <p class = "rating1"></p>
+            <p class = "rating2"></p>
+            <h3 class = "armor-training-label">Training: </h3>
+            <p class = "armor-training1"></p>
+            <p class = "armor-training2"></p>
+            <h3 class = "integrity-label">Integrity:</h3>
+            <p class = "integrity1"></p> 
+            <p class = "integrity2"></p>
+            <h2 class = "items-label">Items</h2>
+                <ul class = "items-list"></ul>
+                <h2 class = "training-label">Training</h2>
+                <ul class = "training-list"></ul>
+        </div>
+
+    </div>
+    <div class="character" id="character2">
+            <h1 class = "civilian-character-label">Civilian Character</h1>
+            <h2 class = "name-label">Name:</h2>
+            <p class = "name">Loading...</p>
+            <h2 class = "profession-label">Profession:</h2>
+            <p class = "profession"></p>
+            <h2 class = "abilities-label">Abilities</h2>
+            <h3 class = "face-off-label">Face-Off:</h3>
+            <p class = "face-off"></p>
+            <h3 class = "low-key-label">Low-Key:</h3>
+            <p class = "low-key"></p>
+            <h3 class = brainpower-label>Brainpower:</h3> 
+            <p class = "brainpower"></p>
+            <h3 class = "musclebound-label">Musclebound:</h3>
+            <p class = "musclebound"></p>
+            <h2 class = "hit-points-label">Hit Points</h2>
+            <h3 class = "total-hp-label">Total:</h3>
+            <p class = "hp"></p>
+            <h3 class = "current-hp-label">Current:</h3>
+            <h2 class = "weapon-label">Weapon:</h2>
+            <p class = "weapon1"></p>
+            <p class = "weapon2"></p>
+            <h3 class = "type-label">Type:</h3>
+            <p class = "type1"></p>
+            <p class = "type2"></p>
+            <h3 class = "ammo-label">Ammo:</h3>
+            <p class = "ammo1"></p>
+            <p class = "ammo2"></p>
+            <h3 class = "damage-label">Damage:</h3>
+            <p class = "damage1"></p> 
+            <p class = "damage2"></p>
+            <h3 class = "quality-label">Quality:</h3>
+            <p class = "quality1"></p>
+            <p class = "quality2"></p>
+            <h2 class = "armor-label">Armor:</h2>
+            <p class = "armor1"></p>
+            <p class = "armor2"></p>
+            <h3 class = "rating-label">Rating:</h3>
+            <p class = "rating1"></p>
+            <p class = "rating2"></p>
+            <h3 class = "armor-training-label">Training:</h3>
+            <p class = "armor-training1"></p>
+            <p class = "armor-training2"></p>
+            <h3 class = "integrity-label">Integrity:</h3>
+            <p class = "integrity1"></p> 
+            <p class = "integrity2"></p>
+            <h2 class = "items-label">Items</h2>
+                <ul class = "items-list"></ul>
+            <h2 class = "training-label">Training</h2>
+                <ul class = "training-list"></ul>
+    </div>
+    <div class="character" id="character3">
+            <h1 class = "civilian-character-label">Civilian Character</h1>
+            <h2 class = "name-label">Name:</h2>
+            <p class = "name">Loading...</p>
+            <h2 class = "profession-label">Profession:</h2>
+            <p class = "profession"></p>
+            <h2 class = "abilities-label">Abilities</h2>
+            <h3 class = "face-off-label">Face-Off:</h3>
+            <p class = "face-off"></p>
+            <h3 class = "low-key-label">Low-Key:</h3>
+            <p class = "low-key"></p>
+            <h3 class = brainpower-label>Brainpower:</h3> 
+            <p class = "brainpower"></p>
+            <h3 class = "musclebound-label">Musclebound:</h3>
+            <p class = "musclebound"></p>
+            <h2 class = "hit-points-label">Hit Points</h2>
+            <h3 class = "total-hp-label">Total:</h3>
+            <p class = "hp"></p>
+            <h3 class = "current-hp-label">Current:</h3>
+            <h2 class = "weapon-label">Weapon:</h2>
+            <p class = "weapon1"></p>
+            <p class = "weapon2"></p>
+            <h3 class = "type-label">Type:</h3>
+            <p class = "type1"></p>
+            <p class = "type2"></p>
+            <h3 class = "ammo-label">Ammo:</h3>
+            <p class = "ammo1"></p>
+            <p class = "ammo2"></p>
+            <h3 class = "damage-label">Damage:</h3>
+            <p class = "damage1"></p> 
+            <p class = "damage2"></p>
+            <h3 class = "quality-label">Quality:</h3>
+            <p class = "quality1"></p>
+            <p class = "quality2"></p>
+            <h2 class = "armor-label">Armor:</h2>
+            <p class = "armor1"></p>
+            <p class = "armor2"></p>
+            <h3 class = "rating-label">Rating:</h3>
+            <p class = "rating1"></p>
+            <p class = "rating2"></p>
+            <h3 class = "armor-training-label">Training: </h3>
+            <p class = "armor-training1"></p>
+            <p class = "armor-training2"></p>
+            <h3 class = "integrity-label">Integrity:</h3>
+            <p class = "integrity1"></p> 
+            <p class = "integrity2"></p>
+            <h2 class = "items-label">Items</h2>
+                <ul class = "items-list"></ul>
+            <h2 class = "training-label">Training</h2>
+                <ul class = "training-list"></ul>
+    </div>
+    <div class="character" id="character4">
+            <h1 class = "civilian-character-label">Civilian Character</h1>
+            <h2 class = "name-label">Name:</h2>
+            <p class = "name">Loading...</p>
+            <h2 class = "profession-label">Profession:</h2>
+            <p class = "profession"></p>
+            <h2 class = "abilities-label">Abilities</h2>
+            <h3 class = "face-off-label">Face-Off:</h3>
+            <p class = "face-off"></p>
+            <h3 class = "low-key-label">Low-Key:</h3>
+            <p class = "low-key"></p>
+            <h3 class = brainpower-label>Brainpower:</h3> 
+            <p class = "brainpower"></p>
+            <h3 class = "musclebound-label">Musclebound:</h3>
+            <p class = "musclebound"></p>
+            <h2 class = "hit-points-label">Hit Points</h2>
+            <h3 class = "total-hp-label">Total:</h3>
+            <p class = "hp"></p>
+            <h3 class = "current-hp-label">Current:</h3>
+            <h2 class = "weapon-label">Weapon:</h2>
+            <p class = "weapon1"></p>
+            <p class = "weapon2"></p>
+            <h3 class = "type-label">Type:</h3>
+            <p class = "type1"></p>
+            <p class = "type2"></p>
+            <h3 class = "ammo-label">Ammo:</h3>
+            <p class = "ammo1"></p>
+            <p class = "ammo2"></p>
+            <h3 class = "damage-label">Damage:</h3>
+            <p class = "damage1"></p> 
+            <p class = "damage2"></p>
+            <h3 class = "quality-label">Quality:</h3>
+            <p class = "quality1"></p>
+            <p class = "quality2"></p>
+            <h2 class = "armor-label">Armor:</h2>
+            <p class = "armor1"></p>
+            <p class = "armor2"></p>
+            <h3 class = "rating-label">Rating:</h3>
+            <p class = "rating1"></p>
+            <p class = "rating2"></p>
+            <h3 class = "armor-training-label">Training: </h3>
+            <p class = "armor-training1"></p>
+            <p class = "armor-training2"></p>
+            <h3 class = "integrity-label">Integrity:</h3>
+            <p class = "integrity1"></p> 
+            <p class = "integrity2"></p>
+            <h2 class = "items-label">Items</h2>
+                <ul class = "items-list"></ul>
+            <h2 class = "training-label">Training</h2>
+                <ul class = "training-list"></ul>
+    </div>
+    </main>
+    <footer class = "desktop">
+        <p>To create a PDF character sheet, print to PDF from your laptop or desktop</p>
+    </footer>
+</body>
+
+</html>
