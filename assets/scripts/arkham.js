@@ -38,6 +38,8 @@ function search(event) {
     const code = foundCard.code;
     const image = "https://arkhamdb.com" + foundCard.imagesrc;
     const arkhamdb = "https://arkhamdb.com/card/";
+    const arkhamdbRu = "https://ru.arkhamdb.com/card/"
+    document.getElementById("found").href = arkhamdbRu + code;
     document.getElementById("found").innerHTML = found;
     document.getElementById("english").innerHTML = name;
     document.getElementById("english").href = arkhamdb + code;
