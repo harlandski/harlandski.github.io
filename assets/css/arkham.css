@@ -1,6 +1,6 @@
 * {
-  background-color: #222222;
-  color: #cccccc;
+  background-color: #222;
+  color: #ccc;
   font-family: "Comfortaa", sans-serif;
 }
 
@@ -28,5 +28,14 @@ img {
 
 input,
 button {
-  border: solid 1px #cccccc;
+  border: solid 1px #ccc;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button:active {
+  background-color: #ccc;
+  color: #222;
 }
