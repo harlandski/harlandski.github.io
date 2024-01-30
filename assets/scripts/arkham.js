@@ -20,27 +20,31 @@ async function checkDatabase() {
     await setCards();
     russianLabel.innerHTML = "Название карты на русском: ";
     input.style.display = "inline-block";
-    searchButton.style.display = "inline-block"
+    searchButton.style.display = "inline-block";
   }
 }
 
 function search(event) {
   event.preventDefault();
-  if (event.target.value !="") {
-  const searchTerm = document.getElementById("input").value;
-  const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
-  // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
-  const foundCard = cards.find((card) =>
-    card.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
-  );
-  const found = foundCard.name;
-  const name = foundCard.real_name;
-  const image = "https://arkhamdb.com" + foundCard.imagesrc;
-  document.getElementById("found").innerHTML = found;
-  document.getElementById("english").innerHTML = name;
-  const cardImage = document.getElementById("card-image");
-  cardImage.src = image;
-  document.getElementById("input").value=""; }
+  if (event.target.value != "") {
+    const searchTerm = document.getElementById("input").value;
+    const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
+    // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
+    const foundCard = cards.find((card) =>
+      card.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+    );
+    const found = foundCard.name;
+    const name = foundCard.real_name;
+    const code = foundCard.code;
+    const image = "https://arkhamdb.com" + foundCard.imagesrc;
+    const arkhamdb = "https://arkhamdb.com/card/";
+    document.getElementById("found").innerHTML = found;
+    document.getElementById("english").innerHTML = name;
+    document.getElementById("english").href = arkhamdb + code;
+    const cardImage = document.getElementById("card-image");
+    cardImage.src = image;
+    document.getElementById("input").value = "";
+  }
 }
 
 function monitorInput() {
@@ -66,7 +70,9 @@ function dataList() {
   const sortedOnlyCyrillicNames = allNames
     .sort()
     .filter((item) => /[а-яА-Я]/.test(item));
-  const sortedOnlyCyrillicNamesNoDupes = sortedOnlyCyrillicNames.filter((value,index) => sortedOnlyCyrillicNames.indexOf(value) === index);
+  const sortedOnlyCyrillicNamesNoDupes = sortedOnlyCyrillicNames.filter(
+    (value, index) => sortedOnlyCyrillicNames.indexOf(value) === index
+  );
   for (item of sortedOnlyCyrillicNamesNoDupes) {
     const option = document.createElement("option");
     option.innerHTML = item;
@@ -74,7 +80,7 @@ function dataList() {
   }
 }
 
-// This function has to be async, and checkDatabase() called with await, so that the dataList will only 
+// This function has to be async, and checkDatabase() called with await, so that the dataList will only
 // be set up once the database is loaded the first time
 async function main() {
   await checkDatabase();
