@@ -63,6 +63,11 @@ function setUpImageErrorHandling() {
     event.onerror = null;
   });
 }
+
+function toggleTranslationDirection() {
+  
+}
+
 function dataList() {
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   const allNames = [];
@@ -87,6 +92,7 @@ function dataList() {
 async function main() {
   await checkDatabase();
   setUpImageErrorHandling();
+  toggleTranslationDirection();
   dataList();
   monitorInput();
 }
