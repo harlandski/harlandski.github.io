@@ -1,3 +1,5 @@
+let englishRussian = false;
+
 async function fetchCards() {
   // Though node fetch doesn't care, browser fetch needs the final / or you get TypeError: Failed to fetch
   const response = await fetch("https://ru.arkhamdb.com/api/public/cards/");
@@ -30,15 +32,21 @@ function search(event) {
     const searchTerm = document.getElementById("input").value;
     const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
     // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
-    const foundCard = cards.find((card) =>
+    let foundCard;
+    if (englishRussian === false) { 
+      foundCard = cards.find((card) =>
       card.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
-    );
+    );}
+    else {
+      foundCard = cards.find((card) =>
+      card.real_name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+    );}
     const found = foundCard.name;
     const name = foundCard.real_name;
     const code = foundCard.code;
     const image = "https://arkhamdb.com" + foundCard.imagesrc;
     const arkhamdb = "https://arkhamdb.com/card/";
-    const arkhamdbRu = "https://ru.arkhamdb.com/card/"
+    const arkhamdbRu = "https://ru.arkhamdb.com/card/";
     document.getElementById("found").href = arkhamdbRu + code;
     document.getElementById("found").innerHTML = found;
     document.getElementById("english").innerHTML = name;
@@ -65,10 +73,22 @@ function setUpImageErrorHandling() {
 }
 
 function toggleTranslationDirection() {
-  
+  toggle.addEventListener("change", () => {
+    englishRussian = !englishRussian;
+    selectDatalist(englishRussian);
+  });
 }
 
-function dataList() {
+function selectDatalist(toggle) {
+  if (toggle === false) {
+    dataListRussian();
+  } else {
+    dataListEnglish();
+  }
+}
+
+function dataListRussian() {
+  document.getElementById("card-name").innerHTML="";
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   const allNames = [];
   for (card of cards) {
@@ -87,13 +107,31 @@ function dataList() {
   }
 }
 
+function dataListEnglish() {
+  document.getElementById("card-name").innerHTML="";
+  const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
+  const allNames = [];
+  for (card of cards) {
+    allNames.push(card.real_name);
+  }
+  const sortedNames = allNames.sort();
+  const sortedNamesNoDupes = sortedNames.filter(
+    (value, index) => sortedNames.indexOf(value) === index
+  );
+  for (item of sortedNamesNoDupes) {
+    const option = document.createElement("option");
+    option.innerHTML = item;
+    document.getElementById("card-name").appendChild(option);
+  }
+}
+
 // This function has to be async, and checkDatabase() called with await, so that the dataList will only
 // be set up once the database is loaded the first time
 async function main() {
   await checkDatabase();
   setUpImageErrorHandling();
+  dataListRussian();
   toggleTranslationDirection();
-  dataList();
   monitorInput();
 }
 
