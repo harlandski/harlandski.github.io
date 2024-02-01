@@ -1,4 +1,3 @@
-document.getElementById("toggle").checked = "false";
 let englishRussian = false;
 
 async function fetchCards() {
@@ -136,12 +135,7 @@ function dataListEnglish() {
 async function main() {
   await checkDatabase();
   setUpImageErrorHandling();
-  if (document.getElementById("toggle").checked === false) {
-    dataListRussian();
-  }
-  else {
-    dataListEnglish();
-  }
+  dataListRussian();
   toggleTranslationDirection();
   monitorInput();
 }
