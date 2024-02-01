@@ -1,3 +1,4 @@
+document.getElementById("toggle").checked = "false";
 let englishRussian = false;
 
 async function fetchCards() {
@@ -15,6 +16,7 @@ async function checkDatabase() {
   if (!localStorage.getItem("ArkhamCards")) {
     const russianLabel = document.getElementById("russian-label");
     const input = document.getElementById("input");
+
     const searchButton = document.getElementById("search-button");
     input.style.display = "none";
     searchButton.style.display = "none";
@@ -130,11 +132,16 @@ function dataListEnglish() {
 }
 
 // This function has to be async, and checkDatabase() called with await, so that the dataList will only
-// be set up once the database is loaded the first time
+// be set up once the database is loaded the firsthttps://wordpress.org/support/topic/reset-a-toggle-button-programmatically/ time
 async function main() {
   await checkDatabase();
   setUpImageErrorHandling();
-  dataListRussian();
+  if (document.getElementById("toggle").checked === false) {
+    dataListRussian();
+  }
+  else {
+    dataListEnglish();
+  }
   toggleTranslationDirection();
   monitorInput();
 }
