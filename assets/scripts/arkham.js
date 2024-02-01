@@ -73,8 +73,12 @@ function setUpImageErrorHandling() {
 }
 
 function toggleTranslationDirection() {
+  const toggle = document.getElementById("toggle");
   toggle.addEventListener("change", () => {
-    englishRussian = !englishRussian;
+    if (toggle.checked) 
+    { englishRussian = true;}
+    else 
+    { englishRussian = false;}
     selectDatalist(englishRussian);
   });
 }
