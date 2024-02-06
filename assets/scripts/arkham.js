@@ -131,7 +131,7 @@ function dataListEnglish() {
 }
 
 // This function has to be async, and checkDatabase() called with await, so that the dataList will only
-// be set up once the database is loaded the firsthttps://wordpress.org/support/topic/reset-a-toggle-button-programmatically/ time
+// be set up once the database is loaded the first time
 async function main() {
   await checkDatabase();
   setUpImageErrorHandling();
