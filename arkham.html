@@ -14,10 +14,10 @@
   <body>
     <div id="app">
     <form>
-      <label for="russian" id="russian-label"
+      <label for="input" id="input-label"
         >Название карты:
       </label>
-      <input type="text" name="russian" id="input" list="card-name">
+      <input type="text" name="input" id="input" list="card-name">
         <datalist id="card-name">
         </datalist>
       </input>
@@ -25,14 +25,14 @@
     </form>
   <label class="switch">
     <input type="checkbox" id="toggle">
-    <div class="slider round">
+    <div class="slider round" id="slider">
       <span class="on">en-ru</span>
       <span class="off">ru-en</span>
       <!--END-->
     </div>
   </label>
 
-    <p><a href="" id="found" target="_blank"></a></p>
+    <p><a href="" id="russian" target="_blank"></a></p>
     <p><a href="" id="english" target="_blank"></a></p>
     <img src="./assets/images/arkham-horror-card-back.png" alt="card-image" id="card-image" />
     </div>

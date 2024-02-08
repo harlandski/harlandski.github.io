@@ -1,5 +1,3 @@
-let englishRussian = false;
-
 async function fetchCards() {
   // Though node fetch doesn't care, browser fetch needs the final / or you get TypeError: Failed to fetch
   const response = await fetch("https://ru.arkhamdb.com/api/public/cards/");
@@ -13,17 +11,22 @@ async function setCards() {
 
 async function checkDatabase() {
   if (!localStorage.getItem("ArkhamCards")) {
-    const russianLabel = document.getElementById("russian-label");
+    // Set variables for document manipulation
+    const inputLabel = document.getElementById("input-label");
     const input = document.getElementById("input");
-
     const searchButton = document.getElementById("search-button");
+    const slider = document.getElementById("slider");
+    // While database is loading, don't display
     input.style.display = "none";
     searchButton.style.display = "none";
-    russianLabel.innerHTML = "Скачается база данных";
+    slider.style.display = "none";
+    inputLabel.innerHTML = "Скачается база данных...";
     await setCards();
-    russianLabel.innerHTML = "Название карты на русском: ";
+    /// Once database is loaded, display everything
+    inputLabel.innerHTML = "Название карты:";
     input.style.display = "inline-block";
     searchButton.style.display = "inline-block";
+    slider.style.display = "block";
   }
 }
 
@@ -32,29 +35,35 @@ function search(event) {
   if (event.target.value != "") {
     const searchTerm = document.getElementById("input").value;
     const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
-    // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
-    let foundCard;
-    if (englishRussian === false) { 
-      foundCard = cards.find((card) =>
-      card.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
-    );}
-    else {
-      foundCard = cards.find((card) =>
-      card.real_name.toLowerCase().includes(searchTerm.trim().toLowerCase())
-    );}
-    const found = foundCard.name;
-    const name = foundCard.real_name;
-    const code = foundCard.code;
-    const image = "https://arkhamdb.com" + foundCard.imagesrc;
+    // Using the toggle state instead of a global variable
+    const toggle = document.getElementById("toggle");
     const arkhamdb = "https://arkhamdb.com/card/";
     const arkhamdbRu = "https://ru.arkhamdb.com/card/";
-    document.getElementById("found").href = arkhamdbRu + code;
-    document.getElementById("found").innerHTML = found;
-    document.getElementById("english").innerHTML = name;
-    document.getElementById("english").href = arkhamdb + code;
+    const input = document.getElementById("input");
+    const russian = document.getElementById("russian");
+    const english = document.getElementById("english");
     const cardImage = document.getElementById("card-image");
+    let foundCard;
+    if (toggle.checked === false) {
+      // Note .includes() is better than === and .trim() is needed to get rid of spaces added by mobile keyboards
+      foundCard = cards.find((card) =>
+        card.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+      );
+    } else {
+      foundCard = cards.find((card) =>
+        card.real_name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+      );
+    }
+    const name = foundCard.name;
+    const realName = foundCard.real_name;
+    const code = foundCard.code;
+    const image = "https://arkhamdb.com" + foundCard.imagesrc;
+    russian.href = arkhamdbRu + code;
+    russian.innerHTML = name;
+    english.innerHTML = realName;
+    english.href = arkhamdb + code;
     cardImage.src = image;
-    document.getElementById("input").value = "";
+    input.value = "";
   }
 }
 
@@ -76,10 +85,11 @@ function setUpImageErrorHandling() {
 function toggleTranslationDirection() {
   const toggle = document.getElementById("toggle");
   toggle.addEventListener("change", () => {
-    if (toggle.checked) 
-    { englishRussian = true;}
-    else 
-    { englishRussian = false;}
+    if (toggle.checked) {
+      englishRussian = true;
+    } else {
+      englishRussian = false;
+    }
     selectDatalist(englishRussian);
   });
 }
@@ -93,7 +103,7 @@ function selectDatalist(toggle) {
 }
 
 function dataListRussian() {
-  document.getElementById("card-name").innerHTML="";
+  document.getElementById("card-name").innerHTML = "";
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   const allNames = [];
   for (card of cards) {
@@ -113,7 +123,7 @@ function dataListRussian() {
 }
 
 function dataListEnglish() {
-  document.getElementById("card-name").innerHTML="";
+  document.getElementById("card-name").innerHTML = "";
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   const allNames = [];
   for (card of cards) {
