@@ -10,13 +10,14 @@ async function setCards() {
 }
 
 async function checkDatabase() {
+  // Only do this if localStorage doesn't already have the database
   if (!localStorage.getItem("ArkhamCards")) {
     // Set variables for document manipulation
     const inputLabel = document.getElementById("input-label");
     const input = document.getElementById("input");
     const searchButton = document.getElementById("search-button");
     const slider = document.getElementById("slider");
-    // While database is loading, don't display
+    // While database is loading, don't display things
     input.style.display = "none";
     searchButton.style.display = "none";
     slider.style.display = "none";
@@ -54,15 +55,18 @@ function search(event) {
         card.real_name.toLowerCase().includes(searchTerm.trim().toLowerCase())
       );
     }
+    // Define variables based on properties of the found card
     const name = foundCard.name;
     const realName = foundCard.real_name;
     const code = foundCard.code;
     const image = "https://arkhamdb.com" + foundCard.imagesrc;
+    // Update the html with the properties
     russian.href = arkhamdbRu + code;
     russian.innerHTML = name;
     english.innerHTML = realName;
     english.href = arkhamdb + code;
     cardImage.src = image;
+    // Clear the input box after a search
     input.value = "";
   }
 }
@@ -75,9 +79,11 @@ function monitorInput() {
 }
 
 function setUpImageErrorHandling() {
+  // If there is no image available, then display a default card back image
   const cardImage = document.getElementById("card-image");
   cardImage.addEventListener("error", (event) => {
     event.target.src = "./assets/images/arkham-horror-card-back.png";
+    // This is to stop a infinite loop if the above image does not display for some reason
     event.onerror = null;
   });
 }
@@ -85,12 +91,7 @@ function setUpImageErrorHandling() {
 function toggleTranslationDirection() {
   const toggle = document.getElementById("toggle");
   toggle.addEventListener("change", () => {
-    if (toggle.checked) {
-      englishRussian = true;
-    } else {
-      englishRussian = false;
-    }
-    selectDatalist(englishRussian);
+    selectDatalist(toggle.checked);
   });
 }
 
@@ -145,7 +146,7 @@ function dataListEnglish() {
 async function main() {
   await checkDatabase();
   setUpImageErrorHandling();
-  dataListRussian();
+  selectDatalist(document.getElementById("toggle").checked)
   toggleTranslationDirection();
   monitorInput();
 }
