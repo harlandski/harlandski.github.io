@@ -97,43 +97,35 @@ function toggleTranslationDirection() {
 
 function selectDatalist(toggle) {
   if (toggle === false) {
-    dataListRussian();
+    // Note the regex is given literally, without quotes
+    dataList("name", /[а-яА-Я]/);
   } else {
-    dataListEnglish();
+    dataList("real_name", /[a-zA-Z]/);
   }
 }
 
-function dataListRussian() {
+function dataList(nameProperty, regex) {
+  // Clears any previous list
   document.getElementById("card-name").innerHTML = "";
+  // Loads the database from localStorage
   const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
   const allNames = [];
   for (card of cards) {
-    allNames.push(card.name);
+    // nameProperty will be either name or real_name depending on translation direction
+    allNames.push(card[nameProperty]);
   }
-  const sortedOnlyCyrillicNames = allNames
+  const sortedNames = allNames
     .sort()
-    .filter((item) => /[а-яА-Я]/.test(item));
-  const sortedOnlyCyrillicNamesNoDupes = sortedOnlyCyrillicNames.filter(
-    (value, index) => sortedOnlyCyrillicNames.indexOf(value) === index
-  );
-  for (item of sortedOnlyCyrillicNamesNoDupes) {
-    const option = document.createElement("option");
-    option.innerHTML = item;
-    document.getElementById("card-name").appendChild(option);
-  }
-}
-
-function dataListEnglish() {
-  document.getElementById("card-name").innerHTML = "";
-  const cards = JSON.parse(localStorage.getItem("ArkhamCards"));
-  const allNames = [];
-  for (card of cards) {
-    allNames.push(card.real_name);
-  }
-  const sortedNames = allNames.sort();
+    // This is necessary to get rid of English names of cards not yet translated into Russian
+    // It is techniclaly unnecessary for the English-Russian direction, but is here for expandability
+    .filter((item) => regex.test(item));
+  // This removes duplicate names
+  // TODO manage different XP cards properly?
+  // Or is this beyond the scope of a translator?
   const sortedNamesNoDupes = sortedNames.filter(
     (value, index) => sortedNames.indexOf(value) === index
   );
+  // Creates the actual list of card names
   for (item of sortedNamesNoDupes) {
     const option = document.createElement("option");
     option.innerHTML = item;
@@ -146,7 +138,7 @@ function dataListEnglish() {
 async function main() {
   await checkDatabase();
   setUpImageErrorHandling();
-  selectDatalist(document.getElementById("toggle").checked)
+  selectDatalist(document.getElementById("toggle").checked);
   toggleTranslationDirection();
   monitorInput();
 }
